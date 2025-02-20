@@ -1,0 +1,16 @@
+{
+  "id": "conv_1740068417",
+  "updated_at": 1740068470.7427192,
+  "messages": [
+    {
+      "role": "user",
+      "content": "ban la ai\n\nCung cấp câu trả lời ngắn gọn, súc tích và dễ hiểu.",
+      "timestamp": 1740068470.7427192
+    },
+    {
+      "role": "assistant",
+      "content": "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu. Chi tiết: Extra data: line 2 column 1 (char 119)",
+      "timestamp": 1740068470.7427192
+    }
+  ]
+}

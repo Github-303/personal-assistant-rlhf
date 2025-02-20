@@ -1,0 +1,26 @@
+{
+  "id": "conv_1740069326",
+  "updated_at": 1740069550.4515383,
+  "messages": [
+    {
+      "role": "user",
+      "content": "ban la ai\n\nCung cấp câu trả lời ngắn gọn, súc tích và dễ hiểu.",
+      "timestamp": 1740069329.7868981
+    },
+    {
+      "role": "assistant",
+      "content": "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu. Chi tiết: 404 Client Error: Not Found for url: http://192.168.1.12:11434/api/generate%20-d",
+      "timestamp": 1740069329.7868981
+    },
+    {
+      "role": "user",
+      "content": "ban la ai\n\nCung cấp câu trả lời ngắn gọn, súc tích và dễ hiểu.",
+      "timestamp": 1740069550.4505134
+    },
+    {
+      "role": "assistant",
+      "content": "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu. Chi tiết: 404 Client Error: Not Found for url: http://192.168.1.12:11434/api/generate%20-d",
+      "timestamp": 1740069550.4505134
+    }
+  ]
+}

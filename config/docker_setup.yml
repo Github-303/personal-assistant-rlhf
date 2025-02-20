@@ -1,0 +1,28 @@
+# Dockerfile
+FROM python:3.10-slim
+
+# Đặt thư mục làm việc
+WORKDIR /app
+
+# Cài đặt các phụ thuộc
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Sao chép mã nguồn
+COPY . .
+
+# Tạo thư mục dữ liệu và logs
+RUN mkdir -p data/conversations data/rlhf_exports logs
+
+# Đặt biến môi trường
+ENV PYTHONPATH=/app
+ENV OLLAMA_HOST=ollama
+ENV OLLAMA_PORT=11434
+ENV LOG_LEVEL=INFO
+
+# Expose port (nếu cần API trong tương lai)
+EXPOSE 8000
+
+# Chạy ứng dụng
+ENTRYPOINT ["python", "main.py"]
+CMD ["--interactive", "--feedback"]

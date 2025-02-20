@@ -1,0 +1,153 @@
+# # Cấu hình mặc định cho hệ thống hỗ trợ cá nhân
+
+# system:
+#   version: "1.0.0"
+#   log_level: "INFO"
+#   log_file: "logs/assistant.log"
+#   data_dir: "data"
+#   feedback_db: "data/feedback.db"
+#   conversation_dir: "data/conversations"
+#   rlhf_export_dir: "data/rlhf_exports"
+#   config_dir: "config"
+
+# ollama:
+#   base_url: "http://192.168.1.12:11434"
+#   timeout: 30  # Thời gian timeout (giây)
+#   retry_attempts: 3  # Số lần thử lại khi lỗi
+
+# assistant:
+#   default_max_tokens: 1024
+#   default_temperature: 0.7
+#   conversation_history_limit: 100  # Giới hạn lịch sử hội thoại
+
+# group_discussion:
+#   default_rounds: 2
+#   min_rounds: 1
+#   max_rounds: 5
+#   summarize_results: true
+#   add_confidence_scores: true
+
+# optimization:
+#   enabled: true
+#   auto_select_model: true
+#   check_group_discussion_suitability: true
+#   improve_system_prompt: true
+#   improve_user_prompt: true
+  
+#   # Cấu hình RLHF
+#   feedback:
+#     enabled: true
+#     collection_probability: 0.3  # Xác suất yêu cầu phản hồi
+#     collect_comparisons: true
+#     min_samples_for_update: 5  # Số mẫu tối thiểu trước khi cập nhật
+  
+#   # Cấu hình DPO
+#   preference:
+#     weight_update_factor: 0.1  # Hệ số cập nhật trọng số
+#     win_rate_weight: 0.7  # Trọng số của tỷ lệ thắng
+#     score_weight: 0.3  # Trọng số của điểm đánh giá
+#     default_weight: 1.0  # Trọng số mặc định
+#     min_weight: 0.5  # Trọng số tối thiểu
+#     max_weight: 2.0  # Trọng số tối đa
+
+# api:
+#   enabled: false  # Tính năng API (tương lai)
+#   port: 8000
+#   host: "127.0.0.1"
+#   auth_required: true
+
+system:
+  version: "1.0.0"
+  log_level: "INFO"
+  log_file: "logs/assistant.log"
+  data_dir: "data"
+  feedback_db: "data/feedback.db"
+  conversation_dir: "data/conversations"
+  rlhf_export_dir: "data/rlhf_exports"
+  config_dir: "config"
+
+ollama:
+  base_url: "http://192.168.1.12:11434"
+  timeout: 30
+  retry_attempts: 3
+
+assistant:
+  default_max_tokens: 1024
+  default_temperature: 0.7
+  conversation_history_limit: 100
+
+group_discussion:
+  default_rounds: 2
+  min_rounds: 1
+  max_rounds: 5
+  summarize_results: true
+  add_confidence_scores: true
+  system_prompt: "Đây là kết quả thảo luận nhóm giữa các AI chuyên gia khác nhau. Mỗi chuyên gia đã đóng góp từ lĩnh vực chuyên môn của họ, và kết quả đã được tổng hợp thành một câu trả lời toàn diện."
+  strengths:
+    comprehensive: 0.9
+    balanced: 0.88
+    thorough: 0.85
+    creative: 0.8
+    problem_solving: 0.88
+    language: 0.85
+
+optimization:
+  enabled: true
+  auto_select_model: true
+  check_group_discussion_suitability: true
+  improve_system_prompt: true
+  improve_user_prompt: true
+
+  feedback:
+    enabled: true
+    collection_probability: 0.3
+    collect_comparisons: true
+    min_samples_for_update: 5
+
+  preference:
+    weight_update_factor: 0.1
+    win_rate_weight: 0.7
+    score_weight: 0.3
+    default_weight: 1.0
+    min_weight: 0.5
+    max_weight: 2.0
+
+api:
+  enabled: false
+  port: 8000
+  host: "127.0.0.1"
+  auth_required: true
+
+models:
+  - name: "qwen2.5-coder:7b"
+    role: "code"
+    system_prompt: "Bạn là trợ lý lập trình viên chuyên nghiệp. Nhiệm vụ của bạn là viết mã nguồn chất lượng cao, cung cấp giải pháp kỹ thuật, debugging và tối ưu hóa code."
+    strengths:
+      programming: 0.95
+      algorithms: 0.9
+      technical_explanation: 0.85
+      math: 0.8
+      problem_solving: 0.85
+      language: 0.75
+
+  - name: "deepseek-r1:8b"
+    role: "deep_thinking"
+    system_prompt: "Bạn là AI chuyên về tư duy phản biện và phân tích sâu. Hãy xem xét vấn đề từ nhiều góc độ, đánh giá các lập luận, phân tích logic, tìm ra các mâu thuẫn tiềm ẩn."
+    strengths:
+      analysis: 0.95
+      critical_thinking: 0.9
+      reasoning: 0.92
+      evaluation: 0.88
+      problem_solving: 0.85
+      language: 0.8
+
+  - name: "deepseek-r1:1.5b"
+    role: "llm"
+    system_prompt: "Bạn là trợ lý AI ngôn ngữ nhỏ gọn, tập trung vào việc trả lời nhanh chóng và hiệu quả. Hãy cung cấp thông tin ngắn gọn, súc tích và đi thẳng vào vấn đề."
+    strengths:
+      language: 0.9
+      conciseness: 0.95
+      clarity: 0.85
+      summarization: 0.92
+      general_knowledge: 0.75
+      communication: 0.88

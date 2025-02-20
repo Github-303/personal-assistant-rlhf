@@ -1,0 +1,69 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama-server
+    volumes:
+      - ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    networks:
+      - assistant-network
+
+  assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: personal-assistant
+    volumes:
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - OLLAMA_HOST=ollama
+      - OLLAMA_PORT=11434
+      - LOG_LEVEL=INFO
+      - FEEDBACK_ENABLED=true
+      - OPTIMIZATION_ENABLED=true
+    depends_on:
+      - ollama
+    stdin_open: true  # Để hỗ trợ chế độ tương tác
+    tty: true         # Để hỗ trợ chế độ tương tác
+    networks:
+      - assistant-network
+
+  # Có thể thêm API service trong tương lai
+  # api:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.api
+  #   container_name: assistant-api
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - OLLAMA_HOST=ollama
+  #     - OLLAMA_PORT=11434
+  #   depends_on:
+  #     - ollama
+  #     - assistant
+  #   networks:
+  #     - assistant-network
+
+volumes:
+  ollama-data:
+    name: ollama-data
+
+networks:
+  assistant-network:
+    name: assistant-network
+    driver: bridge

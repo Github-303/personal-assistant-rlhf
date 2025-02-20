@@ -1,0 +1,14 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "Bạn là model nào",
+      "timestamp": "2025-02-20T21:24:06.215093"
+    }
+  ],
+  "metadata": {
+    "created_at": "2025-02-20T21:37:31.629534",
+    "message_count": 1,
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,59 @@
+# Cấu hình tối ưu hóa RLHF/DPO
+
+optimization:
+  # Cấu hình chung
+  enabled: true
+  auto_select_model: true
+  check_group_discussion_suitability: true
+  improve_system_prompt: true
+  improve_user_prompt: true
+
+  # Cấu hình RLHF (Reinforcement Learning from Human Feedback)
+  feedback:
+    enabled: true
+    collection_probability: 0.3  # Xác suất yêu cầu phản hồi
+    collect_comparisons: true
+    min_samples_for_update: 5  # Số mẫu tối thiểu trước khi cập nhật
+    feedback_cache_size: 1000  # Số lượng phản hồi tối đa lưu trong cache
+    feedback_collection_methods:
+      - cli_prompt  # Thu thập qua CLI
+      - api         # Thu thập qua API (tương lai)
+    initial_feedback_boost: true  # Tăng xác suất thu thập cho mô hình mới
+    
+  # Cấu hình DPO (Direct Preference Optimization)
+  preference:
+    weight_update_factor: 0.1    # Hệ số cập nhật trọng số (0.0-1.0)
+    win_rate_weight: 0.7         # Trọng số của tỷ lệ thắng
+    score_weight: 0.3            # Trọng số của điểm đánh giá
+    default_weight: 1.0          # Trọng số mặc định
+    min_weight: 0.5              # Trọng số tối thiểu
+    max_weight: 2.0              # Trọng số tối đa
+    periodic_update: true        # Tự động cập nhật định kỳ
+    update_interval: 10          # Cập nhật sau mỗi 10 phản hồi mới
+    smooth_updates: true         # Làm mịn các cập nhật đột ngột
+    
+  # Phân tích truy vấn
+  query_analysis:
+    use_cached_categories: true  # Sử dụng phân loại đã lưu trong cơ sở dữ liệu
+    category_similarity_threshold: 0.85  # Ngưỡng tương đồng để sử dụng phân loại đã lưu
+    keyword_weighting: true      # Cân nhắc vị trí từ khóa trong truy vấn
+    complex_query_threshold: 1.8  # Ngưỡng để xác định truy vấn phức tạp
+    
+  # Tối ưu hóa prompt
+  prompt_optimization:
+    template_selection_strategy: "best_match"  # best_match, random_top3, weighted
+    max_prompt_token_count: 2048    # Giới hạn token cho prompt
+    dynamic_instruction_tuning: true  # Điều chỉnh hướng dẫn dựa trên phản hồi
+    instruction_history_window: 20    # Số lượng phản hồi gần đây để phân tích
+    
+  # Tối ưu hóa system prompt
+  system_prompt_optimization:
+    append_only: true  # Chỉ thêm hướng dẫn, không thay thế
+    max_additions: 3   # Số lượng tối đa hướng dẫn bổ sung
+    max_tokens: 512    # Độ dài tối đa của system prompt
+    instruction_categories:
+      - performance
+      - quality
+      - tone
+      - format
+      - domain_specific

@@ -1,0 +1,24 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "ban la ai",
+      "timestamp": "2025-02-20T21:38:02.238843"
+    },
+    {
+      "role": "user",
+      "content": "ẽit",
+      "timestamp": "2025-02-20T21:38:30.246715"
+    },
+    {
+      "role": "user",
+      "content": "ẽit",
+      "timestamp": "2025-02-20T21:38:32.606532"
+    }
+  ],
+  "metadata": {
+    "created_at": "2025-02-20T21:38:36.868420",
+    "message_count": 3,
+    "version": "1.0.0"
+  }
+}

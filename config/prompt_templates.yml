@@ -1,0 +1,172 @@
+# Mẫu prompt cho từng vai trò và loại câu hỏi
+
+code:
+  programming: |
+    Hãy viết mã nguồn chất lượng cao để giải quyết vấn đề sau. 
+    Tập trung vào tính đúng đắn, hiệu quả, dễ bảo trì và chú thích đầy đủ:
+    
+    ${query}
+    
+    Lưu ý:
+    1. Đảm bảo mã nguồn tuân theo các nguyên tắc clean code
+    2. Thêm chú thích rõ ràng, chi tiết
+    3. Xử lý các trường hợp ngoại lệ
+    4. Cung cấp ví dụ sử dụng
+    5. Giải thích các lựa chọn thiết kế quan trọng
+
+  algorithms: |
+    Hãy phân tích và triển khai thuật toán để giải quyết vấn đề sau. 
+    Đánh giá độ phức tạp thời gian và không gian, cùng với các phân tích chi tiết:
+    
+    ${query}
+    
+    Yêu cầu:
+    1. Mô tả rõ ràng các bước của thuật toán
+    2. Phân tích độ phức tạp (Big O) của thuật toán
+    3. So sánh với các phương pháp giải quyết khác (nếu có)
+    4. Cài đặt thuật toán bằng mã nguồn
+    5. Thảo luận về các trường hợp biên và tối ưu hóa
+
+  technical_explanation: |
+    Hãy giải thích chi tiết về khía cạnh kỹ thuật sau đây.
+    Cung cấp hiểu biết sâu sắc, chính xác và toàn diện:
+    
+    ${query}
+    
+    Trong giải thích của bạn, hãy:
+    1. Bắt đầu với tổng quan dễ hiểu
+    2. Đi sâu vào chi tiết kỹ thuật
+    3. Giải thích các khái niệm nền tảng
+    4. Cung cấp ví dụ cụ thể
+    5. Nêu ra các cân nhắc thực tế
+    
+  default: |
+    Hãy cung cấp một câu trả lời chi tiết, kỹ thuật và chính xác về vấn đề sau:
+    
+    ${query}
+    
+    Trong câu trả lời của bạn, hãy bao gồm:
+    1. Giải thích kỹ thuật chi tiết
+    2. Ví dụ cụ thể và mã nguồn (nếu thích hợp)
+    3. Các phương pháp tiếp cận thay thế
+    4. Cân nhắc về hiệu suất và bảo mật
+    5. Tài liệu tham khảo hoặc nguồn (nếu thích hợp)
+
+deep_thinking:
+  analysis: |
+    Hãy phân tích sâu sắc và toàn diện về vấn đề sau, xem xét từ nhiều góc độ khác nhau:
+    
+    ${query}
+    
+    Trong phân tích của bạn, hãy bao gồm:
+    1. Các khía cạnh khác nhau của vấn đề
+    2. Các giả định tiềm ẩn và cách chúng ảnh hưởng đến kết quả
+    3. Các mối quan hệ nhân quả
+    4. Đánh giá về tính bền vững và tác động dài hạn
+    5. Xem xét các yếu tố không chắc chắn và rủi ro
+    6. Kết luận có cân nhắc và cân bằng
+
+  critical_thinking: |
+    Hãy áp dụng tư duy phản biện để đánh giá vấn đề sau, thách thức các giả định và 
+    xem xét các luận điểm từ nhiều phía:
+    
+    ${query}
+    
+    Trong phân tích của bạn, hãy:
+    1. Xác định và thẩm định các giả định chính
+    2. Đánh giá chất lượng và độ tin cậy của các luận điểm
+    3. Tìm kiếm các sai sót logic hoặc thiên kiến
+    4. Xem xét các quan điểm thay thế
+    5. Cân nhắc các tác động đạo đức và xã hội (nếu có)
+    6. Đề xuất cách tiếp cận cân bằng
+
+  evaluation: |
+    Hãy đánh giá toàn diện về chủ đề sau đây, cân nhắc các ưu điểm, nhược điểm, 
+    và đưa ra kết luận có căn cứ:
+    
+    ${query}
+    
+    Trong đánh giá của bạn, hãy bao gồm:
+    1. Các tiêu chí đánh giá rõ ràng
+    2. Phân tích ưu điểm và nhược điểm
+    3. So sánh với các lựa chọn thay thế
+    4. Bằng chứng và dữ liệu hỗ trợ
+    5. Cân nhắc về ngữ cảnh và giới hạn
+    6. Kết luận và khuyến nghị dựa trên phân tích
+
+  default: |
+    Hãy suy ngẫm sâu sắc về câu hỏi sau đây, đánh giá nó từ nhiều khía cạnh và đưa ra
+    một phản hồi cân bằng, đầy đủ và thấu đáo:
+    
+    ${query}
+    
+    Trong câu trả lời của bạn, hãy:
+    1. Cung cấp phân tích nhiều chiều
+    2. Xem xét các mâu thuẫn và nghịch lý
+    3. Kết nối với ngữ cảnh rộng hơn
+    4. Xem xét các hệ quả ngắn hạn và dài hạn
+    5. Đưa ra kết luận có chiều sâu và cân nhắc
+
+llm:
+  summarization: |
+    Hãy tóm tắt ngắn gọn, súc tích và đầy đủ thông tin về:
+    
+    ${query}
+    
+    Tóm tắt nên:
+    1. Bao gồm các điểm chính quan trọng nhất
+    2. Bỏ qua chi tiết không thiết yếu
+    3. Được trình bày theo cấu trúc rõ ràng
+    4. Không quá 5 điểm chính
+    5. Sử dụng ngôn ngữ chính xác và hiệu quả
+
+  conciseness: |
+    Hãy cung cấp câu trả lời súc tích và đi thẳng vào vấn đề cho câu hỏi sau:
+    
+    ${query}
+    
+    Yêu cầu:
+    1. Tối đa 3-5 câu
+    2. Chỉ cung cấp thông tin thiết yếu
+    3. Không có giải thích dài dòng
+    4. Sử dụng ngôn ngữ chính xác
+    5. Tập trung vào phần cốt lõi của câu trả lời
+
+  default: |
+    Hãy cung cấp một câu trả lời ngắn gọn, rõ ràng và hiệu quả cho:
+    
+    ${query}
+    
+    Câu trả lời nên:
+    1. Đi thẳng vào vấn đề
+    2. Sử dụng ngôn ngữ đơn giản và dễ hiểu
+    3. Tập trung vào thông tin thiết yếu
+    4. Có cấu trúc rõ ràng
+    5. Dễ dàng tiếp thu
+
+group_discussion:
+  complex_problem: |
+    Hãy phân tích vấn đề phức tạp sau đây từ nhiều góc độ chuyên môn.
+    Xem xét các khía cạnh kỹ thuật, phân tích chiến lược, và cân nhắc thực tiễn:
+    
+    ${query}
+    
+    Yêu cầu cho câu trả lời:
+    1. Phân tích kỹ thuật chi tiết từ góc nhìn lập trình viên
+    2. Đánh giá phản biện từ góc độ tư duy hệ thống
+    3. Tóm tắt những điểm chính một cách rõ ràng và súc tích
+    4. Cân bằng giữa lý thuyết và ứng dụng thực tế
+    5. Tích hợp các quan điểm thành một giải pháp tổng thể
+    
+  default: |
+    Hãy suy nghĩ kỹ về vấn đề sau đây từ nhiều góc độ, xem xét các khía cạnh kỹ thuật,
+    phân tích sâu và trình bày rõ ràng:
+    
+    ${query}
+    
+    Trong câu trả lời của bạn, hãy:
+    1. Cung cấp cả thông tin kỹ thuật và phân tích sâu sắc
+    2. Xem xét các góc nhìn khác nhau
+    3. Đề xuất giải pháp thực tế và có cơ sở
+    4. Cân bằng giữa chi tiết kỹ thuật và khả năng tiếp cận
+    5. Tổng hợp thành một câu trả lời toàn diện và mạch lạc
