@@ -157,7 +157,7 @@ system:
   rlhf_export_dir: "data/rlhf_exports"
 
 ollama:
-  base_url: "http://192.168.1.12:11434"
+  base_url: "http://localhost:11434"
   timeout: 30  # Thời gian timeout (giây)
   retry_attempts: 3  # Số lần thử lại khi lỗi
 

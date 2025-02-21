@@ -4,7 +4,7 @@
 
 # Kiểm tra Ollama
 echo "Kiểm tra kết nối với Ollama..."
-curl -s http://192.168.1.12:11434/api/version > /dev/null
+curl -s http://localhost:11434/api/version > /dev/null
 if [ $? -ne 0 ]; then
     echo "CẢNH BÁO: Không thể kết nối với Ollama. Vui lòng đảm bảo Ollama đang chạy."
     echo "Bạn có muốn tiếp tục không? (y/n)"

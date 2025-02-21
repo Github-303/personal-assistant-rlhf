@@ -32,7 +32,7 @@ class ModelManager:
         self.ollama_config = config.get("ollama", {})
         
         # Cấu hình Ollama API
-        self.base_url = self.ollama_config.get("base_url", "http://192.168.1.12:11434")
+        self.base_url = self.ollama_config.get("base_url", "http://localhost:11434")
         self.timeout = self.ollama_config.get("timeout", 30)
         self.retry_attempts = self.ollama_config.get("retry_attempts", 3)
         
